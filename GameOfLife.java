@@ -14,18 +14,18 @@ public class GameOfLife {
 		 ////test1(fileName);
 		//// test2(fileName);
 		//// test3(fileName, 3);
-		//// play(fileName);
+		 play(fileName);
 	}
 	
 	// Reads the data file and prints the initial board.
-	public static void test1(String fileName) {
+	private static void test1(String fileName) {
 		int[][] board = read(fileName);
 		print(board);
 	}
 		
 	// Reads the data file, and runs a test that checks 
 	// the count and cellValue functions.
-	public static void test2(String fileName) {
+	private static void test2(String fileName) {
 		int[][] board = read(fileName);
 		//// Write here code that tests that the count and cellValue functions
 		//// are working properly, and returning the correct values.
@@ -41,7 +41,7 @@ public class GameOfLife {
 		
 	// Reads the data file, plays the game for Ngen generations, 
 	// and prints the board at the beginning of each generation.
-	public static void test3(String fileName, int Ngen) {
+	private static void test3(String fileName, int Ngen) {
 		int[][] board = read(fileName);
 		for (int gen = 0; gen < Ngen; gen++) {
 			System.out.println("Generation " + gen + ":");
@@ -70,12 +70,12 @@ public class GameOfLife {
 		In in = new In(fileName); // Constructs an In object for reading the input file
 		int rows = Integer.parseInt(in.readLine());
 		int cols = Integer.parseInt(in.readLine());
-		int[][] board = new int[rows][cols];
+		int[][] board = new int[rows + 2][cols + 2];
 		//// Replace the following statement with your code.
 		String s = "";
-			for(int i = 1; i < rows - 1; i++){
+			for(int i = 1; i < rows + 1; i++){
 				s = in.readLine();
-				for(int j = 1; j < s.length() - 1; j++){
+				for(int j = 1; j < s.length() + 1; j++){
 					if(s.charAt(j-1) == 'x') board [i][j] = 1;
 					}
 				}
@@ -88,13 +88,13 @@ public class GameOfLife {
 	// cell in the new board. Returns the new board.
 	public static int[][] evolve(int[][] board) {
 		//// Replace the following statement with your code.
-		int[][] board2 = new int[board.length][board[0].length];
-		for(int i=1 ; i<board2.length-1 ; i++) {
-			for (int j = 1; j < board2[0].length - 1; j++) {
-				board2[i][j] = cellValue(board, i, j);
+		int[][] board3 = new int[board.length][board[0].length];
+		for(int i=1 ; i<board3.length-1 ; i++) {
+			for (int j = 1; j < board3[0].length - 1; j++) {
+				board3[i][j] = cellValue(board, i, j);
 			}
 		}
-		return board2;
+		return board3;
 	}
 
 	// Returns the value that cell (i,j) should have in the next generation.
