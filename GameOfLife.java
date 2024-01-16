@@ -89,7 +89,7 @@ public class GameOfLife {
 	public static int[][] evolve(int[][] board) {
 		//// Replace the following statement with your code.
 		int[][] board3 = new int[board.length][board[0].length];
-		for(int i=1 ; i<board3.length-1 ; i++) {
+		for(int i=1 ; i < board3.length-1 ; i++) {
 			for (int j = 1; j < board3[0].length - 1; j++) {
 				board3[i][j] = cellValue(board, i, j);
 			}
@@ -112,10 +112,10 @@ public class GameOfLife {
 		if(n == 1){
 			if(count(board, i, j) == 0 || count(board, i, j) == 1 || count(board, i, j) > 3) return 0;
 		}
-		if (n == 0) {
+		else if (n == 0) {
 			if (count(board, i, j) == 3) return 1;
 		}
-		return n;
+		else n;
 	}
 	
 	// Counts and returns the number of living neighbors of the given cell
@@ -142,7 +142,7 @@ public class GameOfLife {
 		int M = arr[0].length;
 			for(int i = 0; i < N; i++){
 				for(int j = 0; j < M;j++){
-					System.out.printf(" %d", arr [i][j]);
+					System.out.printf("  %d", arr[i][j]);
 				}
 				System.out.printf("%n");
 			}
