@@ -115,7 +115,7 @@ public class GameOfLife {
 		else if (n == 0) {
 			if (count(board, i, j) == 3) return 1;
 		}
-		else n;
+		 return n;
 	}
 	
 	// Counts and returns the number of living neighbors of the given cell
