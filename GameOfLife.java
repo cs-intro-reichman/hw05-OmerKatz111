@@ -35,7 +35,7 @@ public class GameOfLife {
 				board2[i][j] = cellValue(board, i, j);
 			}
 		}
-		System.out.println("the board will look like this in the next gen:");
+	//	System.out.println("the board will look like this in the next gen:");
 		print(board2);
 	}
 		
